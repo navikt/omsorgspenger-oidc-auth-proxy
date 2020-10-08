@@ -5,7 +5,7 @@ on:
       - 'nais/naiserator.yaml'
       - 'nais/dev-gcp.json'
     branches:
-      - 'main'
+      - main
 
 jobs:
   deploy-dev:
