@@ -13,7 +13,7 @@
         "OIDC_AUTH_PROXY_BASE_URL": "https://omsorgspenger-oidc-auth-proxy.dev.adeo.no",
         "APPLICATION_BASE_URL": "https://omsorgspenger-visning.dev.adeo.no",
         "SESSION_ID_COOKIE_NAME": "omsorgspenger",
-        "CORS_ALLOWED_HEADERS": "Content-Type,Referer",
+        "CORS_ALLOWED_HEADERS": "Content-Type,Referer,X-Request-ID",
         "CORS_EXPOSED_HEADERS": "Location",
         "PROXY_CONFIG": "{\"apis\":[]}"
     }
