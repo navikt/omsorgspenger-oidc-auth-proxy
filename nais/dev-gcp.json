@@ -7,8 +7,6 @@
     "azureTenant": "trygdeetaten.no",
     "oidcAuthProxyImage": "docker.pkg.github.com/navikt/oidc-auth-proxy/oidc-auth-proxy:2020.10.08-008783c",
     "env": {
-        "USE_IN_MEMORY_SESSION_STORE": "true",
-        "ALLOW_PROXY_TO_SELF_SIGNED_CERTIFICATES": "false",
         "LOGIN_SCOPES": "openid profile",
         "OIDC_AUTH_PROXY_BASE_URL": "https://omsorgspenger-oidc-auth-proxy.dev.adeo.no",
         "APPLICATION_BASE_URL": "https://omsorgspenger-visning.dev.adeo.no",
