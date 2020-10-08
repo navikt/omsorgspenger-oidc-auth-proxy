@@ -58,5 +58,3 @@ spec:
       value: '{"apis":[]}'
     - name: USE_IN_MEMORY_SESSION_STORE
       value: 'true'
-    - name: ALLOW_PROXY_TO_SELF_SIGNED_CERTIFICATES
-      value: 'false'
