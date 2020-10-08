@@ -1,0 +1,23 @@
+name: Deploy omsorgspenger-oidc-auth-proxy dev-gcp
+on:
+  push:
+    paths:
+      - 'nais/naiserator.yaml'
+      - 'nais/dev-gcp.json'
+    branches:
+      - 'main'
+
+jobs:
+  deploy-dev:
+    name: Deploye til dev-gcp
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hente kode
+        uses: actions/checkout@v2
+      - name: Deploy til dev-gcp
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          RESOURCE: nais/naiserator.yaml
+          VARS: nais/dev-gcp.json

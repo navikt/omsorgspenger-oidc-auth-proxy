@@ -1,0 +1,54 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: omsorgspenger-oidc-auth-proxy
+  namespace: omsorgspenger
+  labels:
+    team: omsorgspenger
+spec:
+  image: {{oidcAuthProxyImage}}
+  port: 8080
+  azure:
+    application:
+      enabled: true
+      tenant: {{azureTenant}}
+  accessPolicy:
+    outbound:
+      external:
+        - host: login.microsoftonline.com
+      rules: []
+  liveness:
+    path: isalive
+    initialDelay: 20
+    timeout: 1
+    periodSeconds: 5
+    failureThreshold: 10
+  readiness:
+    path: isready
+    initialDelay: 20
+    timeout: 1
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi
+  ingresses:
+  {{#each ingresses as |url|}}
+     - {{url}}
+  {{/each}}
+  replicas:
+    min: {{minReplicas}}
+    max: {{maxReplicas}}
+    cpuThresholdPercentage: 90
+  prometheus:
+    enabled: false
+    path: /metrics
+  envFrom:
+    - secret: omsorgspenger-oidc-auth-proxy-cookie-secrets
+  env:
+  {{#each env}}
+    - name: {{@key}}
+      value: {{this}}
+  {{/each}}
