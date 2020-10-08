@@ -1,4 +1,4 @@
-name: Deploy omsorgspenger-oidc-auth-proxy dev-gcp
+name: omsorgspenger-oidc-auth-proxy DEV
 on:
   push:
     paths:
@@ -9,12 +9,12 @@ on:
 
 jobs:
   deploy-dev:
-    name: Deploye til dev-gcp
+    name: deploy DEV
     runs-on: ubuntu-latest
     steps:
       - name: Hente kode
         uses: actions/checkout@v2
-      - name: Deploy til dev-gcp
+      - name: Deploy dev-gcp
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
