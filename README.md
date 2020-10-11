@@ -1,4 +1,4 @@
-# omsorgspenger-oidc-proxy
+# omsorgspenger-oidc-auth-proxy
 Innloggingshåndtering for saksbehandlingssystemer for omsorgspenger.
 Bruker https://github.com/navikt/oidc-auth-proxy
 

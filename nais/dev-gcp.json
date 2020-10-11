@@ -5,7 +5,7 @@
       "https://omsorgspenger-oidc-auth-proxy.dev.adeo.no"
     ],
     "azureTenant": "trygdeetaten.no",
-    "oidcAuthProxyImage": "docker.pkg.github.com/navikt/oidc-auth-proxy/oidc-auth-proxy:2020.10.08-ca7699b",
+    "oidcAuthProxyImage": "docker.pkg.github.com/navikt/oidc-auth-proxy/oidc-auth-proxy:2020.10.11-50bc6ef",
     "oidcAuthProxyCallbackUrl": "https://omsorgspenger-oidc-auth-proxy.dev.adeo.no/oidc/callback",
     "env": {
         "LOGIN_SCOPES": "openid profile d6e26f58-2ca4-4620-be34-27aed85449eb/.default",
