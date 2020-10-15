@@ -18,7 +18,8 @@ spec:
     outbound:
       external:
         - host: login.microsoftonline.com
-      rules: []
+      rules:
+        - application: omsorgspenger-oidc-auth-proxy-redis
   liveness:
     path: isalive
     initialDelay: 20
@@ -49,6 +50,7 @@ spec:
     path: /metrics
   envFrom:
     - secret: omsorgspenger-oidc-auth-proxy-cookie-secrets
+    - secret: omsorgspenger-oidc-auth-proxy-redis-password
   env:
   {{#each env}}
     - name: {{@key}}
@@ -56,5 +58,7 @@ spec:
   {{/each}}
     - name: PROXY_CONFIG
       value: '{"apis":[]}'
-    - name: USE_IN_MEMORY_SESSION_STORE
-      value: 'true'
+    - name: REDIS_HOST
+      value: omsorgspenger-oidc-auth-proxy-redis.omsorgspenger.svc.cluster.local
+    - name: REDIS_PORT
+      value: '6379'
