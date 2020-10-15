@@ -62,3 +62,5 @@ spec:
       value: omsorgspenger-oidc-auth-proxy-redis.omsorgspenger.svc.cluster.local
     - name: REDIS_PORT
       value: '6379'
+    - name: USE_IN_MEMORY_SESSION_STORE
+      value: 'true'
