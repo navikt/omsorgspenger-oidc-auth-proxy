@@ -20,6 +20,7 @@ spec:
         - host: login.microsoftonline.com
       rules:
         - application: omsorgspenger-oidc-auth-proxy-redis
+        - application: omsorgspenger-sak
   liveness:
     path: isalive
     initialDelay: 20

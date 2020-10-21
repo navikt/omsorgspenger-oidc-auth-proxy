@@ -22,3 +22,4 @@ jobs:
           RESOURCE: nais/naiserator.yaml
           VARS: nais/dev-gcp.json
           PRINT_PAYLOAD: true
+          DRY_RUN: true
