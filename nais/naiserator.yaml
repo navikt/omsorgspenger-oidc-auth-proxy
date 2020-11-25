@@ -21,6 +21,7 @@ spec:
       rules:
         - application: omsorgspenger-oidc-auth-proxy-redis
         - application: omsorgspenger-sak
+        - application: omsorgspenger-rammemeldinger
   liveness:
     path: isalive
     initialDelay: 20
@@ -58,7 +59,7 @@ spec:
       value: {{this}}
   {{/each}}
     - name: PROXY_CONFIG
-      value: '{"apis":[{"path":"sak","url":"http://omsorgspenger-sak.omsorgspenger.svc.cluster.local","scopes":"{{omsorgspengerSakScopes}}"}]}'
+      value: '{"apis":[{"path":"sak","scopes":"{{omsorgspengerSakScopes}}","url":"http://omsorgspenger-sak.omsorgspenger.svc.cluster.local"},{"path":"rammemeldinger","scopes":"{{omsorgspengerRammemeldingerScopes}}","url":"http://omsorgspenger-rammemeldinger.omsorgspenger.svc.cluster.local"}]}'
     - name: REDIS_HOST
       value: omsorgspenger-oidc-auth-proxy-redis.omsorgspenger.svc.cluster.local
     - name: REDIS_PORT
