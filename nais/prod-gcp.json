@@ -10,7 +10,7 @@
     "omsorgspengerSakScopes": "4c4e6e55-2063-4507-8fd6-5d5a4604c0db/.default",
     "omsorgspengerRammemeldingerScopes": "06cfefb0-32e2-47b4-a828-8b836c6b91d7/.default",
     "env": {
-        "LOGIN_SCOPES": "openid profile",
+        "LOGIN_SCOPES": "openid profile 8ea04759-5770-48dc-a805-806376ee73c1/.default",
         "OIDC_AUTH_PROXY_BASE_URL": "https://omsorgspenger-oidc-auth-proxy.intern.nav.no",
         "APPLICATION_BASE_URL": "https://omsorgspenger-visning.intern.nav.no",
         "SESSION_ID_COOKIE_NAME": "omsorgspenger",
