@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - 'nais/redis.yaml'
-    branches:
-      - main
 
 jobs:
-  deploy-dev:
-    name: deploy redis DEV
+  deploy:
+    name: deploy redis
     runs-on: ubuntu-latest
     steps:
       - name: Hente kode
@@ -18,5 +16,13 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
+          RESOURCE: nais/redis.yaml
+          PRINT_PAYLOAD: true
+      - name: Deploy prod-gcp
+        if: github.ref == 'refs/heads/main'
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
           RESOURCE: nais/redis.yaml
           PRINT_PAYLOAD: true
