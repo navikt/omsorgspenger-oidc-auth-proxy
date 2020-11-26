@@ -1,15 +1,14 @@
-name: omsorgspenger-oidc-auth-proxy DEV
+name: omsorgspenger-oidc-auth-proxy
 on:
   push:
     paths:
       - 'nais/naiserator.yaml'
       - 'nais/dev-gcp.json'
-    branches:
-      - main
+      - 'nais/prod-gcp.json'
 
 jobs:
   deploy-dev:
-    name: deploy DEV
+    name: deploy oidc-auth-proxy
     runs-on: ubuntu-latest
     steps:
       - name: Hente kode
@@ -21,4 +20,13 @@ jobs:
           CLUSTER: dev-gcp
           RESOURCE: nais/naiserator.yaml
           VARS: nais/dev-gcp.json
+          PRINT_PAYLOAD: true
+      - name: Deploy prod-gcp
+        if: github.ref == 'refs/heads/main'
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
+          RESOURCE: nais/naiserator.yaml
+          VARS: nais/prod-gcp.json
           PRINT_PAYLOAD: true
