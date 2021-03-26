@@ -5,7 +5,7 @@
       "https://omsorgspenger-oidc-auth-proxy.intern.nav.no"
     ],
     "azureTenant": "nav.no",
-    "oidcAuthProxyImage": "docker.pkg.github.com/navikt/oidc-auth-proxy/oidc-auth-proxy:2020.11.25-6dbb1f2",
+    "oidcAuthProxyImage": "docker.pkg.github.com/navikt/oidc-auth-proxy/oidc-auth-proxy:2021.03.26-cdd9d00",
     "oidcAuthProxyCallbackUrl": "https://omsorgspenger-oidc-auth-proxy.intern.nav.no/oidc/callback",
     "omsorgspengerSakScopes": "4c4e6e55-2063-4507-8fd6-5d5a4604c0db/.default",
     "omsorgspengerRammemeldingerScopes": "06cfefb0-32e2-47b4-a828-8b836c6b91d7/.default",
