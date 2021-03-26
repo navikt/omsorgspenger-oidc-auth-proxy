@@ -5,7 +5,7 @@
       "https://omsorgspenger-oidc-auth-proxy.dev.intern.nav.no"
     ],
     "azureTenant": "trygdeetaten.no",
-    "oidcAuthProxyImage": "docker.pkg.github.com/navikt/oidc-auth-proxy/oidc-auth-proxy:2021.03.26-64d2a4c",
+    "oidcAuthProxyImage": "docker.pkg.github.com/navikt/oidc-auth-proxy/oidc-auth-proxy:2021.03.26-cdd9d00",
     "oidcAuthProxyCallbackUrl": "https://omsorgspenger-oidc-auth-proxy.dev.intern.nav.no/oidc/callback",
     "omsorgspengerSakScopes": "3ebacf0c-2409-4ae7-8507-07c8da9ddd25/.default",
     "omsorgspengerRammemeldingerScopes": "6245a73c-78ac-4a78-8e11-9ae07dd5a389/.default",
