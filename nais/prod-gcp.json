@@ -5,16 +5,13 @@
       "https://omsorgspenger-oidc-auth-proxy.intern.nav.no"
     ],
     "azureTenant": "nav.no",
-    "oidcAuthProxyImage": "docker.pkg.github.com/navikt/oidc-auth-proxy/oidc-auth-proxy:2021.03.26-131e5be",
+    "oidcAuthProxyImage": "ghcr.io/navikt/oidc-auth-proxy:2.2021.06.14-2a506b1-rc",
     "oidcAuthProxyCallbackUrl": "https://omsorgspenger-oidc-auth-proxy.intern.nav.no/oidc/callback",
     "omsorgspengerSakScopes": "4c4e6e55-2063-4507-8fd6-5d5a4604c0db/.default",
     "omsorgspengerRammemeldingerScopes": "06cfefb0-32e2-47b4-a828-8b836c6b91d7/.default",
     "env": {
-        "LOGIN_SCOPES": "openid profile 8ea04759-5770-48dc-a805-806376ee73c1/.default",
-        "OIDC_AUTH_PROXY_BASE_URL": "https://omsorgspenger-oidc-auth-proxy.intern.nav.no",
-        "APPLICATION_BASE_URL": "https://omsorgspenger-visning.intern.nav.no",
-        "SESSION_ID_COOKIE_NAME": "omsorgspenger",
-        "CORS_ALLOWED_HEADERS": "Content-Type,Referer,X-Request-ID",
-        "CORS_EXPOSED_HEADERS": "Location"
+        "LOGIN_SCOPES": "value:openid profile 8ea04759-5770-48dc-a805-806376ee73c1/.default",
+        "OIDC_AUTH_PROXY_BASE_URL": "value:https://omsorgspenger-oidc-auth-proxy.intern.nav.no",
+        "APPLICATION_BASE_URL": "value:https://omsorgspenger-visning.intern.nav.no"
     }
 }

@@ -59,9 +59,20 @@ spec:
       value: {{this}}
   {{/each}}
     - name: PROXY_CONFIG
-      value: '{"apis":[{"path":"sak","scopes":"{{omsorgspengerSakScopes}}","url":"http://omsorgspenger-sak.omsorgspenger.svc.cluster.local"},{"path":"rammemeldinger","scopes":"{{omsorgspengerRammemeldingerScopes}}","url":"http://omsorgspenger-rammemeldinger.omsorgspenger.svc.cluster.local"}]}'
+      value: 'value:{"apis":[{"path":"sak","scopes":"{{omsorgspengerSakScopes}}","url":"http://omsorgspenger-sak.omsorgspenger.svc.cluster.local"},{"path":"rammemeldinger","scopes":"{{omsorgspengerRammemeldingerScopes}}","url":"http://omsorgspenger-rammemeldinger.omsorgspenger.svc.cluster.local"}]}'
     - name: REDIS_HOST
-      value: omsorgspenger-oidc-auth-proxy-redis.omsorgspenger.svc.cluster.local
+      value: value:omsorgspenger-oidc-auth-proxy-redis.omsorgspenger.svc.cluster.local
     - name: REDIS_PORT
-      value: '6379'
-
+      value: value:6379
+    - name: SESSION_ID_COOKIE_NAME
+      value: value:omsorgspenger
+    - name: CORS_ALLOWED_HEADERS
+      value: value:Content-Type,Referer,X-Request-ID
+    - name: CORS_EXPOSED_HEADERS
+      value: value:Location
+    - name: CLIENT_ID
+      value: env:AZURE_APP_CLIENT_ID
+    - name: DISCOVERY_URL
+      value: env:AZURE_APP_WELL_KNOWN_URL
+    - name: JWK
+      value: path:/var/run/secrets/nais.io/azure/AZURE_APP_JWK
