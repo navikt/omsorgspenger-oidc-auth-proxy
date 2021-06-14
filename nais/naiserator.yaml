@@ -52,7 +52,9 @@ spec:
     path: /metrics
   filesFrom:
     - secret: omsorgspenger-oidc-auth-proxy-cookie-secrets
+      mountPath: /var/run/secrets/cookie
     - secret: omsorgspenger-oidc-auth-proxy-redis-password
+      mountPath: /var/run/secrets/redis
   env:
   {{#each env}}
     - name: {{@key}}
@@ -77,8 +79,8 @@ spec:
     - name: JWK
       value: path:/var/run/secrets/nais.io/azure/AZURE_APP_JWK
     - name: REDIS_PASSWORD
-      value: path:/var/run/secrets/REDIS_PASSWORD
+      value: path:/var/run/secrets/redis/REDIS_PASSWORD
     - name: SESSION_ID_COOKIE_SIGN_SECRET
-      value: path:/var/run/secrets/SESSION_ID_COOKIE_SIGN_SECRET
+      value: path:/var/run/secrets/cookie/SESSION_ID_COOKIE_SIGN_SECRET
     - name: SESSION_ID_COOKIE_VERIFY_SECRET
-      value: path:/var/run/secrets/SESSION_ID_COOKIE_VERIFY_SECRET
+      value: path:/var/run/secrets/cookie/SESSION_ID_COOKIE_VERIFY_SECRET
