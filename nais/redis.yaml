@@ -6,7 +6,7 @@ metadata:
   labels:
     team: omsorgspenger
 spec:
-  image: bitnami/redis:6.2.1
+  image: bitnami/redis:6.2.5
   port: 6379
   replicas: # A single Redis-app doesn't scale
     min: 1
